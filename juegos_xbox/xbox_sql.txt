@@ -1,0 +1,40 @@
+CREATE DATABASE videojuegos;
+
+CREATE TABLE genero (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE videojuegos_xbox (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(150) NOT NULL,
+    descripcion TEXT,
+    id_genero INT,
+    fecha_alta DATE,
+    FOREIGN KEY (id_genero) REFERENCES genero(id) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+INSERT INTO genero (nombre) VALUES
+('Acción'),
+('Aventura'),
+('Rol'),
+('Carreras'),
+('Pelea'),
+('Deportes'),
+('Shooter'),
+('Survival Horror'),
+('Plataformas'),
+('Música');
+
+INSERT INTO videojuegos_xbox (nombre, descripcion, id_genero, fecha_alta) VALUES
+('Psi-Ops: The Mindgate Conspiracy', 'Shooter en tercera persona con poderes psíquicos, combinando acción intensa y resolución de puzles.', 1),
+('Spider-Man', 'Juego de acción y aventura basado en el cómic, permitiendo a los jugadores balancearse por la ciudad y luchar contra villanos icónicos.', 1),
+('Need for Speed: Underground 2', 'Carreras callejeras de mundo abierto con personalización de autos y un modo historia ambientado en la cultura tuning.', 4),
+('Colin McRae Rally 3', 'Un videojuego de carreras de rally, donde tomas el rol de Colin McRae en el equipo Ford, conduciendo el Ford Focus RS WRC.', 4),
+('Halo: Combat Evolved', 'Shooter en primera persona revolucionario con una campaña épica y multijugador icónico en el universo de ciencia ficción de Halo.', 7),
+('Star Wars Battlefront II', 'Shooter basado en las batallas más icónicas de Star Wars, con modos de juego en tierra y espacio.', 7),
+('TimeSplitters 2', 'FPS frenético con viajes en el tiempo, un elenco variado de personajes y un modo multijugador altamente personalizable.', 7),
+('Unreal II: The Awakening', 'Shooter en primera persona con una historia de ciencia ficción envolvente y un impresionante diseño de niveles.', 7),
+('Silent Hill 2', 'Survival horror psicológico con una atmósfera opresiva, narrativa profunda y monstruos simbólicos que exploran el miedo y la culpa.', 8),
+('Shadow the Hedgehog', 'Plataformas y acción con un tono más oscuro, permitiendo a los jugadores tomar decisiones morales que afectan la historia.', 9),
+('Spyro: A Hero's Tail', 'Juego de plataformas y aventuras con nuevos personajes, habilidades y un mundo vibrante lleno de desafíos y secretos.', 9).
