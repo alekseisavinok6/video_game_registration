@@ -14,3 +14,7 @@ P@sswOrd401?
 
 
 
+#nu_ventana_1   >   #new_window_1
+#ed_ventana_1   >   #edit_window_1
+#el_ventana_1    >   #delete_window_1
+
