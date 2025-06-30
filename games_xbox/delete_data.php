@@ -21,7 +21,7 @@ if ($id === null) {
     exit;
 }
 
-$sql = "DELETE FROM video_games_ps2 
+$sql = "DELETE FROM video_games_xbox
         WHERE id = ?
         AND id_user = ?";
 
@@ -34,14 +34,14 @@ if ($stmt = $mysqli->prepare($sql)) {
 
             if (file_exists($image)) {
                 if (unlink($image)) {
-                    $_SESSION['color'] = "primary";
+                    $_SESSION['color'] = "success";
                     $_SESSION['msg'] = "Record deleted";
                 } else {
                     $_SESSION['color'] = "warning";
                     $_SESSION['msg'] = "Record deleted, but the image to delete was not found";
                 }
             } else {
-                $_SESSION['color'] = "primary";
+                $_SESSION['color'] = "success";
                 $_SESSION['msg'] = "Record deleted";
             }    
         } else {

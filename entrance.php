@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+require 'database.php';
 
 if (isset($_POST['register'])) {
     $first_name = $_POST['first_name'];
@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
         $user = $result->fetch_assoc();
         if (password_verify($user_password, $user['user_password'])) {
             $_SESSION['user'] = $user['first_name'];
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['id_user'] = $user['id'];
             header("Location: games_ps2/index.php");
             exit;
         } else {

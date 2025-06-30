@@ -1,20 +1,9 @@
-Maria Carmen
-maria94madrid@gmail.com
-P@sswOrd123?
-
-
-
 Sarah Connor
 sarah88miami@gmail.com
 P@sswOrd400?
 
 Kyle Reese
-kyle86@phoenix@gmail.com
+kyle86phoenix@gmail.com
 P@sswOrd401?
 
-
-
-#nu_ventana_1   >   #new_window_1
-#ed_ventana_1   >   #edit_window_1
-#el_ventana_1    >   #delete_window_1
 

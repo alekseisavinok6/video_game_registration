@@ -5,7 +5,7 @@ require '../database.php';
 
 if (!isset($_SESSION['id_user'])) {
     $_SESSION['color'] = "danger";
-    $_SESSION['msg'] = "Unauthenticated user to update data.";
+    $_SESSION['msg'] = "Unauthenticated user to update data";
     header('Location: entrance.php');
     exit;
 }
@@ -19,12 +19,12 @@ $genders = $_POST['genders'] ?? null;
 
 if ($id === null || $title === null || $specification === null || $genders === null) {
     $_SESSION['color'] = "danger";
-    $_SESSION['msg'] = "Incomplete data for update.";
+    $_SESSION['msg'] = "Incomplete data for update";
     header('Location: entrance.php');
     exit;
 }
 
-$sql = "UPDATE video_games_ps2 
+$sql = "UPDATE video_games_xbox
         SET title = ?, specification = ?, id_gender = ? 
         WHERE id = ?
         AND id_user = ?";
@@ -32,8 +32,8 @@ $sql = "UPDATE video_games_ps2
     if ($stmt = $mysqli->prepare($sql)) {
         $stmt->bind_param("ssiii", $title, $specification, $genders, $id, $current_id_user);
         if ($stmt->execute()) {
-        $_SESSION['color'] = "primary";
-        $_SESSION['msg'] = "Updated record.";
+        $_SESSION['color'] = "success";
+        $_SESSION['msg'] = "Updated record";
 
         if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
             $allowed = array("image/jpg", "image/jpeg");

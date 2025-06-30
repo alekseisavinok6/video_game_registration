@@ -25,7 +25,7 @@ if ($title === null || $specification === null || $genders === null) {
 }
 //var_dump($title, $specification, $genders, $current_id_user);
 
-$sql = "INSERT INTO video_games_ps2 (title, specification, id_gender, id_user, creation_date)
+$sql = "INSERT INTO video_games_xbox (title, specification, id_gender, id_user, creation_date)
         VALUES (?, ?, ?, ?, NOW())";
 
 if ($stmt = $mysqli->prepare($sql)) {
@@ -33,7 +33,7 @@ if ($stmt = $mysqli->prepare($sql)) {
     if ($stmt->execute()) {
         $id = $mysqli->insert_id;
 
-        $_SESSION['color'] = "primary";
+        $_SESSION['color'] = "success";
         $_SESSION['msg'] = "Record saved";
 
         if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {

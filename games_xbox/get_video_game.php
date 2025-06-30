@@ -30,7 +30,7 @@ $response = [
 ];
 
 $sql = "SELECT id, title, specification, id_gender
-        FROM video_games_ps2 
+        FROM video_games_xbox
         WHERE id = ? 
         AND id_user = ?
         LIMIT 1";
@@ -42,14 +42,14 @@ if ($stmt = $mysqli->prepare($sql)) {
     $rows = $result->num_rows;
 
     if ($rows > 0) {
-        $video_games_ps2 = $result->fetch_assoc();
+        $video_games_xbox = $result->fetch_assoc();
         $response = [
             'status' => 'success', 
-            'data' => $video_games_ps2, 
-            'id' => $video_games_ps2['id'], 
-            'title' => $video_games_ps2['title'], 
-            'specification' => $video_games_ps2['specification'], 
-            'id_gender' => $video_games_ps2['id_gender']
+            'data' => $video_games_xbox, 
+            'id' => $video_games_xbox['id'], 
+            'title' => $video_games_xbox['title'], 
+            'specification' => $video_games_xbox['specification'], 
+            'id_gender' => $video_games_xbox['id_gender']
         ];
     } else {
         $response = [

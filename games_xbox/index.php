@@ -11,7 +11,7 @@ require '../database.php';
 $current_id_user = $_SESSION['id_user'];
 
 $sql_video_games = "SELECT v.id, v.title, v.specification, g.names AS genders 
-                   FROM video_games_ps2 AS v
+                   FROM video_games_xbox AS v
                    INNER JOIN genders AS g ON v.id_gender=g.id
                    WHERE v.id_user = ?";
 
@@ -35,14 +35,14 @@ $dir = "images/";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PS2 video game registration</title>
+    <title>Xbox video game registration</title>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="../resources/css/all.min.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
     <div class="container py-3">
-        <h2 class="text-center">PlayStation 2 video games <i class="fa-brands fa-playstation"></i></h2>
+        <h2 class="text-center">Xbox video games <i class="fa-brands fa-playstation"></i></h2>
         <hr>
         <div class="alert alert-light text-start">
             Active session for: <strong><?= $_SESSION['user'] ?></strong> with <i>id</i>: <?= $_SESSION['id_user'] ?>
@@ -63,14 +63,14 @@ $dir = "images/";
                 <a href="../close.php" class="btn btn-light"><i class="fa-solid fa-xmark"></i> Log out</a>
             </div>
             <div class="col-auto">
-                <a href="../games_xbox/index.php" class="btn btn-secondary"><i class="fa-solid fa-arrow-right"></i> Go to Xbox</a>
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_window_1"><i class="fa-solid fa-circle-plus"></i> Data upload</a>
+                <a href="../games_ps2/index.php" class="btn btn-secondary"><i class="fa-solid fa-arrow-right"></i> Go to PS2</a>
+                <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#new_window_1"><i class="fa-solid fa-circle-plus"></i> Data upload</a>
             </div>
 
         </div>
 
         <table class="table table-sm table-striped table-hover mt-4">
-            <thead class="table-primary">
+            <thead class="table-success">
                 <tr>
                     <th><i>id</i></th>
                     <th>Title</th>
@@ -82,16 +82,16 @@ $dir = "images/";
             </thead>
 
             <tbody>
-                <?php while ($row_video_games_ps2 = $video_games->fetch_assoc()) { ?>
+                <?php while ($row_video_games_xbox = $video_games->fetch_assoc()) { ?>
                     <tr>
-                        <td><?= $row_video_games_ps2['id']; ?></td>
-                        <td><?= $row_video_games_ps2['title']; ?></td>
-                        <td><?= $row_video_games_ps2['specification']; ?></td>
-                        <td><?= $row_video_games_ps2['genders']; ?></td>
-                        <td><img src="<?= $dir . $row_video_games_ps2['id'] . '.jpg?n=' . time(); ?>" width="100"></td>
+                        <td><?= $row_video_games_xbox['id']; ?></td>
+                        <td><?= $row_video_games_xbox['title']; ?></td>
+                        <td><?= $row_video_games_xbox['specification']; ?></td>
+                        <td><?= $row_video_games_xbox['genders']; ?></td>
+                        <td><img src="<?= $dir . $row_video_games_xbox['id'] . '.jpg?n=' . time(); ?>" width="100"></td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#edit_window_1" data-bs-id="<?= $row_video_games_ps2['id']; ?>"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-                            <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_window_1" data-bs-id="<?= $row_video_games_ps2['id']; ?>"><i class="fa-solid fa-trash"></i></i> Delete</a>
+                            <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#edit_window_1" data-bs-id="<?= $row_video_games_xbox['id']; ?>"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                            <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_window_1" data-bs-id="<?= $row_video_games_xbox['id']; ?>"><i class="fa-solid fa-trash"></i></i> Delete</a>
                         </td>
                     </tr>
                 <?php } ?>
