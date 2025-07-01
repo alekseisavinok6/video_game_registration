@@ -42,7 +42,7 @@ $dir = "images/";
 </head>
 <body class="d-flex flex-column h-100">
     <div class="container py-3">
-        <h2 class="text-center">Xbox video games <i class="fa-brands fa-playstation"></i></h2>
+        <h2 class="text-center">Xbox video games <i class="fa-brands fa-xbox"></i></h2>
         <hr>
         <div class="alert alert-light text-start">
             Active session for: <strong><?= $_SESSION['user'] ?></strong> with <i>id</i>: <?= $_SESSION['id_user'] ?>
