@@ -1,7 +1,7 @@
 ('Grand Theft Auto: San Andreas', 'Open-world game set in a fictional city with action-packed missions.', 1),
 ('Metal Gear Solid 2', 'An action-stealth video game from Konami, released in 2001, known for its complex plot and innovative gameplay.', 1),
 ('Shadow of the Colossus', 'Adventure game where you fight against enormous colossi in a desolate world.', 2),
-('Final Fantasy X', 'Turn-based RPG with a rich narrative and memorable characters.', 3),
+('Final Fantasy X', 'Turn-based RPG with a rich narrative and memorable characters in the huge magical world.', 3),
 ('Gran Turismo 4', 'Racing simulator with a large number of cars and tracks.', 4),
 ('Tekken 5', 'Fighting game with a wide variety of characters and combos.', 5),
 ('Pro Evolution Soccer 6', 'Soccer simulator with realistic mechanics and teams from all over the world.', 6),

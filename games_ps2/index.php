@@ -60,11 +60,22 @@ $dir = "images/";
 
         <div class="row justify-content-end">
             <div class="col text-start">
-                <a href="../close.php" class="btn btn-light"><i class="fa-solid fa-xmark"></i> Log out</a>
+                <a href="../close.php" 
+                class="btn btn-light"
+                style="--bs-btn-padding-y: .16rem; --bs-btn-padding-x: .5rem;">
+                <i class="fa-solid fa-xmark"></i> Log out</a>
             </div>
             <div class="col-auto">
-                <a href="../games_xbox/index.php" class="btn btn-secondary"><i class="fa-solid fa-arrow-right"></i> Go to Xbox</a>
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_window_1"><i class="fa-solid fa-circle-plus"></i> Add new</a>
+                <a href="../games_xbox/index.php" 
+                class="btn btn-secondary"
+                style="--bs-btn-padding-y: .16rem; --bs-btn-padding-x: .5rem;">
+                <i class="fa-solid fa-arrow-right"></i> Go to Xbox</a>
+                <a href="#" 
+                class="btn btn-primary"
+                style="--bs-btn-padding-y: .16rem; --bs-btn-padding-x: .5rem;" 
+                data-bs-toggle="modal" 
+                data-bs-target="#new_window_1">
+                <i class="fa-solid fa-circle-plus"></i> Add new</a>
             </div>
 
         </div>
@@ -90,8 +101,20 @@ $dir = "images/";
                         <td><?= $row_video_games_ps2['genders']; ?></td>
                         <td><img src="<?= $dir . $row_video_games_ps2['id'] . '.jpg?n=' . time(); ?>" width="100"></td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#edit_window_1" data-bs-id="<?= $row_video_games_ps2['id']; ?>"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
-                            <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete_window_1" data-bs-id="<?= $row_video_games_ps2['id']; ?>"><i class="fa-regular fa-trash-can"></i> Delete</a>
+                            <a href="#" 
+                            class="btn btn-warning" 
+                            style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#edit_window_1" 
+                            data-bs-id="<?= $row_video_games_ps2['id']; ?>">
+                            <i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                            <a href="#" 
+                            class="btn btn-sm btn-danger"
+                            style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#delete_window_1" 
+                            data-bs-id="<?= $row_video_games_ps2['id']; ?>">
+                            <i class="fa-regular fa-trash-can"></i> Delete</a>
                         </td>
                     </tr>
                 <?php } ?>
