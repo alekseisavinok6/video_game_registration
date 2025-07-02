@@ -34,7 +34,7 @@
                     </div>
                     <div class="d-flex justify-content-end pt2">
                         <button type="button" class="btn btn-secondary me-1" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-warning ms-1"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+                        <button type="submit" class="btn btn-warning ms-1"><i class="fa-regular fa-floppy-disk"></i> Save</button>
                     </div>
                 </form>
             </div>
